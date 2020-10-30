@@ -1,19 +1,9 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using InterfaceExercises;
 
-namespace InterfaceExercises
+namespace DoSomething
 {
-    interface IDoSomething
-    {
-        public int Age { get; set; }
-        public string Name { get; set; }
-
-        string GetName();
-        int GetAge();
-        int Multiply(int a, int b);
-        void Print();
-    }
-
     class Program
     {
         static void Main(string[] args)
@@ -23,7 +13,7 @@ namespace InterfaceExercises
             Console.WriteLine(defaultType.Age);
             Console.WriteLine(defaultType.GetName());
             Console.WriteLine(defaultType.GetAge());
-            Console.WriteLine(defaultType.Multiply(3,4));
+            Console.WriteLine(defaultType.Multiply(3, 4));
 
             DoIt ageIs48 = new DoIt
             {
