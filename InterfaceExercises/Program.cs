@@ -6,6 +6,7 @@ namespace InterfaceExercises
     {
         string GetName();
         int GetAge();
+        int Multiply(int a, int b);
         void Print();
     }
 
@@ -19,8 +20,11 @@ namespace InterfaceExercises
             };
 
             ageIs37.Print();
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine(ageIs37.GetName());
             Console.WriteLine(ageIs37.GetAge());
+            Console.WriteLine(ageIs37.Multiply(3,4));
             Console.ReadKey();
         }
     }
@@ -47,6 +51,11 @@ namespace InterfaceExercises
             var Name = Console.ReadLine();
 
             return Name;
+        }
+
+        public int Multiply(int a, int b)
+        {
+            return a * b;
         }
 
         public void Print()
