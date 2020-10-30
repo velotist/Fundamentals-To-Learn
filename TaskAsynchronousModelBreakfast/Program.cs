@@ -49,7 +49,7 @@ namespace TaskAsynchronousModelBreakfast
             Task.Delay(3000).Wait();
             Console.WriteLine("Remove toast from toaster");
 
-            return new Task<Toast>();
+            return Task.FromResult<Toast>(null);
         }
 
         private static Task<Bacon> FryBaconAsync(int slices)
@@ -65,7 +65,7 @@ namespace TaskAsynchronousModelBreakfast
             Task.Delay(3000).Wait();
             Console.WriteLine("Put bacon on plate");
 
-            return new Task<Bacon>();
+            return Task.FromResult<Bacon>(null);
         }
 
         private static Task<Egg> FryEggsAsync(int howMany)
@@ -77,7 +77,7 @@ namespace TaskAsynchronousModelBreakfast
             Task.Delay(3000).Wait();
             Console.WriteLine("Put eggs on plate");
 
-            return new Task<Egg>();
+            return Task.FromResult<Egg>(null);
         }
 
         private static Coffee PourCoffee()
