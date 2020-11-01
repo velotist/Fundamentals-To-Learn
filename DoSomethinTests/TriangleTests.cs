@@ -1,9 +1,10 @@
+using CreateObject;
 using System;
 using Xunit;
 
-namespace DoSomethinTests
+namespace ObjectTests
 {
-    public class DoSomethinTest
+    public class TriangleTests
     {
         [Fact]
         public void GetAge_InputString_ReturnZero()
