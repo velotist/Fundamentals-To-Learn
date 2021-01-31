@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Breakfast;
+using System;
 using System.Threading.Tasks;
-using Breakfast;
 
 namespace TaskAsynchronousModelBreakfast
 {
-    class Program
+    internal class Program
     {
-        static async Task Main(string[] args)
+        private static async Task Main(string[] args)
         {
             Coffee cup = PourCoffee();
             Console.WriteLine("coffee is ready");
@@ -33,11 +33,15 @@ namespace TaskAsynchronousModelBreakfast
             return new Juice();
         }
 
-        private static void ApplyJam(Toast toast) =>
+        private static void ApplyJam(Toast toast)
+        {
             Console.WriteLine("Putting jam on the toast");
+        }
 
-        private static void ApplyButter(Toast toast) =>
+        private static void ApplyButter(Toast toast)
+        {
             Console.WriteLine("Putting butter on the toast");
+        }
 
         private static Task<Toast> ToastBreadAsync(int slices)
         {

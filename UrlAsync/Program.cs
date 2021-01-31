@@ -2,13 +2,13 @@
 
 namespace UrlAsync
 {
-    class Program
+    internal class Program
     {
         // the calling method
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            var watch = Stopwatch.StartNew();
-            var url = new UrlAsync();
+            Stopwatch watch = Stopwatch.StartNew();
+            UrlAsync url = new UrlAsync();
             System.Threading.Tasks.Task<int> content = url.GetUrlContentLengthAsync();
             watch.Stop();
             System.Console.WriteLine(watch.Elapsed.Seconds);

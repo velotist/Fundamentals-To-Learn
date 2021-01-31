@@ -8,7 +8,7 @@ namespace UrlAsync
     {
         public async Task<int> GetUrlContentLengthAsync()
         {
-            var client = new HttpClient();
+            HttpClient client = new HttpClient();
 
             Task<string> getStringTask =
                 client.GetStringAsync("https://docs.microsoft.com/dotnet");
@@ -20,7 +20,7 @@ namespace UrlAsync
             return contents.Length;
         }
 
-        void DoIndependentWork()
+        private void DoIndependentWork()
         {
             Console.WriteLine("Working...");
         }

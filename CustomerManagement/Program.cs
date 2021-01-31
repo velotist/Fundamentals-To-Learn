@@ -1,28 +1,30 @@
-﻿using System;
-using InterfaceExercises;
+﻿using InterfaceExercises;
+using System;
 
 namespace CustomerManagement
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Customer customer = new Customer();
-            customer.Name = "Marcus";
+            Customer customer = new Customer
+            {
+                Name = "Marcus"
+            };
             Console.WriteLine(customer.Name);
             customer.DeleteName(customer.Name);
             Console.WriteLine(customer.Name);
         }
     }
 
-    class Customer : ICustomer
+    internal class Customer : ICustomer
     {
         public int Id { get; set; }
         public string Name { get; set; }
 
         public void DeleteName(string name)
         {
-            this.Name = string.Empty;
+            Name = string.Empty;
             Console.WriteLine("Deleted...");
         }
     }

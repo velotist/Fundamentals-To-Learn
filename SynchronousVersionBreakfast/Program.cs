@@ -1,15 +1,15 @@
-﻿using System;
+﻿using Breakfast;
+using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using Breakfast;
 
 namespace AsynchronousVersionBreakfast
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            var watch = Stopwatch.StartNew();
+            Stopwatch watch = Stopwatch.StartNew();
             Coffee cup = PourCoffee();
             Console.WriteLine("coffee is ready");
 
@@ -19,7 +19,7 @@ namespace AsynchronousVersionBreakfast
             Task.Run(() => { Bacon bacon = FryBacon(3); });
             Console.WriteLine("bacon is ready");
 
-            var toast = new Toast();
+            Toast toast = new Toast();
             Task.Run(() => { toast = ToastBread(2); });
             ApplyButter(toast);
             ApplyJam(toast);
@@ -29,7 +29,7 @@ namespace AsynchronousVersionBreakfast
             Console.WriteLine("oj is ready");
             Console.WriteLine("Breakfast is ready!");
             watch.Stop();
-            var seconds = watch.Elapsed.TotalSeconds;
+            double seconds = watch.Elapsed.TotalSeconds;
             Console.WriteLine(seconds);
         }
 
@@ -39,11 +39,15 @@ namespace AsynchronousVersionBreakfast
             return new Juice();
         }
 
-        private static void ApplyJam(Toast toast) =>
+        private static void ApplyJam(Toast toast)
+        {
             Console.WriteLine("Putting jam on the toast");
+        }
 
-        private static void ApplyButter(Toast toast) =>
+        private static void ApplyButter(Toast toast)
+        {
             Console.WriteLine("Putting butter on the toast");
+        }
 
         private static Toast ToastBread(int slices)
         {

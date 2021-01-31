@@ -1,12 +1,12 @@
-﻿using System;
+﻿using InterfaceExercises;
+using System;
 using System.Diagnostics.CodeAnalysis;
-using InterfaceExercises;
 
 namespace DoSomething
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             DoIt defaultType = new DoIt();
 
@@ -25,23 +25,25 @@ namespace DoSomething
         }
     }
 
-    class DoIt : IDoSomething, IEquatable<DoIt>
+    internal class DoIt : IDoSomething, IEquatable<DoIt>
     {
         public int Age { get; set; } = 1;
         public string Name { get; set; } = "noname";
 
         public bool Equals([AllowNull] DoIt other)
         {
-            return (this.Age, this.Name) == (other.Age, other.Name);
+            return (Age, Name) == (other.Age, other.Name);
         }
 
         public int GetAge()
         {
             Console.WriteLine("Your age? ");
-            var isInt = int.TryParse(Console.ReadLine(), result: out int age);
+            bool isInt = int.TryParse(Console.ReadLine(), result: out int age);
             Age = age;
             if (isInt)
+            {
                 return Age;
+            }
 
             return 0;
         }
@@ -49,7 +51,7 @@ namespace DoSomething
         public string GetName()
         {
             Console.WriteLine("Your name? ");
-            var Name = Console.ReadLine();
+            string Name = Console.ReadLine();
 
             return Name;
         }

@@ -1,4 +1,4 @@
-﻿class Triangle
+﻿internal class Triangle
 {
     public int side, altitude;
 

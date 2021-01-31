@@ -7,7 +7,7 @@ namespace DependencyInjection
         void Print();
     }
 
-    class Format : Text
+    internal class Format : Text
     {
         public void Print()
         {
@@ -18,14 +18,21 @@ namespace DependencyInjection
     // constructor injection
     public class ConstructorInjection
     {
-        private Text _text;
-        public ConstructorInjection(Text t1) => this._text = t1;
-        public void print() => _text.Print();
+        private readonly Text _text;
+        public ConstructorInjection(Text t1)
+        {
+            _text = t1;
+        }
+
+        public void print()
+        {
+            _text.Print();
+        }
     }
 
-    class Constructor
+    internal class Constructor
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             ConstructorInjection cs = new ConstructorInjection(new Format());
             cs.print();
